@@ -1,15 +1,5 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
-$length = $_GET["length"];
-$password = "";
-
-for ($i = 0; $i < $length; $i++){
-    $password .= chr(rand(33, 126));
-}
-
+include './functions.php';
 ?>
 
 <html lang="it">
@@ -45,7 +35,7 @@ for ($i = 0; $i < $length; $i++){
                                 <h4 class="text-white fw-bold">Lunghezza => <?php echo $length ?></h4>
                             </div>
                             <div class="col">
-                                <form action="./index.php" class="d-flex">
+                                <form action="index.php" method="GET" class="d-flex">
                                     <input class="form-control me-3" type="number" name="length" placeholder="Lunghezza della password">
                                     <button class="btn btn-outline-light" type="submit">Genera</button>
                                 </form>
